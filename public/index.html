@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Color Me</title>
+        <script src="libraries/p5.js" type="text/javascript"></script>
+        <script src="libraries/p5.dom.js" type="text/javascript"></script>
+        <script src="libraries/p5.sound.js" type="text/javascript"></script>
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.4/socket.io.js"></script>
+        
+        <script src="client.js" type="text/javascript"></script>
+        <script src="libraries/jquery-3.2.1.js"></script>
+        <link href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="style.css">
+    </head>
+    <body>
+        <h1>Color me</h1>
+        <h2>Wes Anderson's Characters</h2>
+        <div style="clear: both;"></div>
+        <div class="color">
+            <div class="name">
+                <p>Pick a <br>Character!</p>
+                <ul>
+                    <li><button onclick='gustave()'>Gustave</button></li>
+                    <li><button onclick='margot()'>Margot</button></li>
+                    <li><button onclick='narrator()'>Narrator</button></li>
+                    <li><button onclick='ben()'>Ben</button></li>
+                    <li><button onclick='fox()'>Mr. Fox</button></li>
+                    <li><button onclick='zissou()'>Zissou</button></li>
+                    <li><button onclick='richard()'>Richard</button></li>
+                    <li><button onclick='francis()'>Francis</button></li>
+                </ul>
+            </div>
+            <div class="sketchbook">
+<!--                <img id="character" src="images/gustave.png">-->
+                <div id="pic">
+            
+                </div>
+               
+            </div>
+            
+            <div class="paint">
+                <p>Pick a <br>Color!</p>
+                <div style="clear: both;"></div>
+                <ul>
+                    <li><input type="image" src="images/red.png" onclick="redMe()" /></li>
+                    <li><input type="image" img src="images/purple.png" onclick="purpleMe()" /></li>
+                    <li><input type="image" img src="images/ice.png" onclick="iceMe()" /></li>
+                    <li><input type="image" img src="images/emerald.png" onclick="emeraldMe()" /></li>
+                    <li><input type="image" img src="images/mustard.png" onclick="mustardMe()" /></li>
+                    <li><input type="image" img src="images/beige.png" onclick="beigeMe()" /></li>
+                    <li class="eraser"><input type="image" img src="images/eraser.png" onclick="eraseMe()" /></li>
+                </ul>
+                <ul>
+                    <li><input type="image" img src="images/magenta.png" onclick="magentaMe()" /></li>
+                    <li><input type="image" img src="images/blue.png" onclick="blueMe()" /></li>
+                    <li><input type="image" img src="images/sky.png" onclick="skyMe()" /></li>
+                    <li><input type="image" img src="images/yellowgreen.png" onclick="yellowgreenMe()" /></li>
+                    <li><input type="image" img src="images/mandarin.png" onclick="mandarinMe()" /></li>
+                    <li><input type="image" img src="images/brown.png" onclick="brownMe()" /></li>
+                </ul>
+                <ul>
+                    <li><input type="image" img src="images/pink.png" onclick="pinkMe()" /></li>
+                    <li><input type="image" img src="images/cool.png" onclick="coolMe()" /></li>
+                    <li><input type="image" img src="images/mint.png" onclick="mintMe()" /></li>
+                    <li><input type="image" img src="images/leaf.png" onclick="leafMe()" /></li>
+                    <li><input type="image" img src="images/orange.png" onclick="orangeMe()" /></li>
+                    <li><input type="image" img src="images/white.png" onclick="whiteMe()" /></li>
+                </ul>
+                <div style="clear: both;"></div>
+            </div>
+        </div>
+        <div style="clear: both;"></div>
+        <p class="illust">Illustration : ©Alejandro Giraldo</p>
+    </body>
+</html>
