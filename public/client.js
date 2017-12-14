@@ -180,7 +180,7 @@ function setup() {
     var button = createButton("reset");
     button.mousePressed(resetColor);
     
-    socket = io.connect('http://localhost:3000'); 
+    socket = io(); 
     socket.on('mouse', newColoring);
     
     socket.on('changeCharacters', function (data) {
