@@ -57,115 +57,151 @@ function redMe() {
     gColor = 13;
     bColor = 59;
     
-    changeColors('redMe');
+    changeColors();
 }
 
 function purpleMe() {
     rColor = 145;
     gColor = 72;
     bColor = 251;
+    
+    changeColors();
 }
 
 function iceMe() {
     rColor = 158;
     gColor = 229;
     bColor = 254;
+    
+    changeColors();
 }
 
 function emeraldMe() {
     rColor = 136;
     gColor = 253;
     bColor = 186;
+    
+    changeColors();
 }
 
 function mustardMe() {
     rColor = 225;
     gColor = 233;
     bColor = 50;
+    
+    changeColors();
 }
 
 function beigeMe() {
     rColor = 254;
     gColor = 228;
     bColor = 143;
+    
+    changeColors();
 }
 
 function magentaMe() {
     rColor = 234;
     gColor = 20;
     bColor = 127;
+    
+    changeColors();
 }
 
 function blueMe() {
     rColor = 40;
     gColor = 40;
     bColor = 231;
+    
+    changeColors();
 }
 
 function skyMe() {
     rColor = 27;
     gColor = 167;
     bColor = 225;
+    
+    changeColors();
 }
 
 function yellowgreenMe() {
     rColor = 45;
     gColor = 253;
     bColor = 47;
+    
+    changeColors();
 }
 
 function mandarinMe() {
     rColor = 253;
     gColor = 174;
     bColor = 42;
+    
+    changeColors();
 }
 
 function brownMe() {
     rColor = 142;
     gColor = 79;
     bColor = 33;
+    
+    changeColors();
 }
 
 function pinkMe() {
     rColor = 253;
     gColor = 72;
     bColor = 249;
+    
+    changeColors();
 }
 
 function coolMe() {
     rColor = 159;
     gColor = 180;
     bColor = 253;
+    
+    changeColors();
 }
 
 function mintMe() {
     rColor = 38;
     gColor = 224;
     bColor = 202;
+    
+    changeColors();
 }
 
 function leafMe() {
     rColor = 233;
     gColor = 254;
     bColor = 161;
+    
+    changeColors();
 }
 
 function orangeMe() {
     rColor = 253;
     gColor = 108;
     bColor = 34;
+    
+    changeColors();
 }
 
 function whiteMe() {
     rColor = 255;
     gColor = 242;
     bColor = 231;
+    
+    changeColors();
 }
 
 function eraseMe() {
     rColor = 245;
     gColor = 245;
     bColor = 222;
+    
+    changeColors();
 }
 
 function setup() {
@@ -187,8 +223,11 @@ function setup() {
         $('.sketchbook').css('background-image', 'url("images/' + data + '.png")')
     });
     
-    socket.on('changeColors', function (data) {
-        data + '()';
+    socket.on('changeColors', function(data) {
+         rColor = data.rColor
+         gColor = data.gColor
+         bColor = data.bColor
+         console.log(data);
     });
     
 }
@@ -226,7 +265,10 @@ function changeCharacters(chrName) {
     resetColor();
 }
 
-function changeColors(crName) {
-    socket.emit('changeColors', crName);
-    resetColor();
+function changeColors() {
+    socket.emit('changeColors', {
+        rColor: rColor,
+        gColor: gColor,
+        bColor: bColor
+    });
 }
